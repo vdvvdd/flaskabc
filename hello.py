@@ -1,6 +1,6 @@
 from flask import Flask
 from flask import flash, render_template
-from flask import request
+from flask import request, abort
 
 app = Flask(__name__)
 app.secret_key = '123'
@@ -34,6 +34,13 @@ def login():
 @app.errorhandler(404)
 def not_found(e):
     return render_template("404.html")
+
+@app.route('/users/<userid>')
+def users(userid):
+    if int(userid) == 1:
+        return render_template("user.html")
+    else:
+        abort(404)
 
 
 if __name__ == '__main__':
