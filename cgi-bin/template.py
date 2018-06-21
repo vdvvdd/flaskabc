@@ -5,7 +5,7 @@ def start_response(resp="text/html"):
     return 'Content-type: ' + resp + '\n\n'
 
 def start_form(the_url="", form_type="POST"):
-    return '<form action="' + the_url + '"method="' + form_type + '"'
+    return '<form action="' + the_url + '" method="' + form_type + '">'
 
 def end_form(submit_msg="Submit"):
     return '<p></p><input type="submit" value="' + submit_msg + '">'
@@ -24,6 +24,4 @@ def start_div(align, style):
 
 def end_div():
     return '</div>'
-
-
 
