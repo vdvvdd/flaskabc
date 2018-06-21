@@ -10,7 +10,7 @@ def start_form(the_url="", form_type="POST"):
 def end_form(submit_msg="Submit"):
     return '<p></p><input type="submit" value="' + submit_msg + '">'
 
-def imput_label(name, placeholder="", value="", readonly=None):
+def input_label(name, placeholder="", value="", readonly=None):
     if readonly is None:
         return '<input type="text" value="' + value + '" name="' + name + '" placeholder="' + placeholder + '">'
     else:
