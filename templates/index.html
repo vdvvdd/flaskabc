@@ -11,12 +11,12 @@
         <img src={{url_for('static', filename='a.png')}}>
     </div>
     <div align="center" style="margin-top: 60px;">
-        <form name="form1">
-            {{message}}
+        {{message}}
+        <form name="form1" method="POST">
             <input type="text" placeholder="add" name="add1">+
             <input type="text" placeholder="add" name="add2">=
             <input type="" readonly="readonly" placeholder="result" name="result">
-            <input type="button" value="calculate" onclick="add()">
+            <input type="submit" value="calculate" onclick="add()">
         </form>
     </div>
 </body>
