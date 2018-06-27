@@ -11,7 +11,10 @@ def index():
     if request.method == 'POST':
         a = request.form['add1']
         b = request.form['add2']
-        return render_template('index.html', message=a)
+        a = int(a)
+        b = int(b)
+        ret = a + b
+        return render_template('index.html', message=ret)
     return render_template('index.html')
 
 if __name__ == '__main__':
