@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/', method=['GET', 'POST'])
 def index():
     #msg = 'backend message'
-    if request.method = 'POST':
+    if request.method == 'POST':
         a = request.form['add1']
         b = request.form['add2']
         return render_template('index.html', message=a)
