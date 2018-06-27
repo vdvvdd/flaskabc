@@ -1,12 +1,17 @@
 from flask import Flask 
 from flask import render_template
 from flask import request
+from flask import redirect
+from flask import url_for
 
 app = Flask(__name__)
 
-
-@app.route('/', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST']):
 def index():
+    return redirect(url_for('add'))
+
+@app.route('/add', methods=['GET', 'POST'])
+def add():
     #msg = 'backend message'
     if request.method == 'POST':
         a = request.form['add1']
