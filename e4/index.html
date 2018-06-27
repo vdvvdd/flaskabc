@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta Charest='UTF-8'>
+    <title>Cal</title>
+
+    <script type="text/javascript" src={{url_for('static', filename='add.js')}}></script>
+</head>
+<body>
+    <div align="center" style="margin-top: 40px;">
+        <img src={{url_for('static', filename='a.png')}}>
+    </div>
+    <div align="center" style="margin-top: 60px;">
+        <form name="form1" method="POST">
+            <input type="text" placeholder="add" name="add1">+
+            <input type="text" placeholder="add" name="add2">=
+            <input type="" readonly="readonly" placeholder="result" name="result" value="{{message}}">
+            <input type="submit" value="calculate" onclick="add()">
+        </form>
+    </div>
+
+    <form>
+        <input type="text" name="text" placeholder="Text">
+        <input type="password" name="password" placeholder="Password">
+        <input trype="textarea" >
+        <textarea name="textarea" placeholder="Textarea">T</textarea>
+        <input type="file" name="file">
+    </form>
+</body>
+</html>
+
