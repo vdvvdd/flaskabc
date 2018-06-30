@@ -8,14 +8,15 @@
 </head>
 <body>
     <div align="center">
+    <h1>User Management</h1>
     {% if message %} {{message}} {% endif %}
-    <form method="POST">
+    <form method="post">
         {{form.username}}
-        <br/>
+        <br>
         {{form.password}}
-        <br/>
-        <input type="submit" name="submit" value="submit">
-        <input type="reset" name="reset" value="reset">
+        <br>
+        <input type="submit" name="submit" value="submit" />
+        <input type="reset" name="reset" value="reset" />
     </form>
     </div>
 </body>
