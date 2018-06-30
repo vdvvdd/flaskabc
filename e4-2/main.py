@@ -15,13 +15,12 @@ class LoginForm(Form):
 def login():
     myForm = LoginForm(request.form)
     if request.method=='POST':
-        username = request.form['username']
-        password = request.form['password']
-
-        if username=='daihao' and password=='123456':
+        if myForm.validate() and myForm.username.data=='daihao' and myForm.password.data=='123456':
             return redirect("https://www.google.com.hk/")
         else:
             message = "login failed"
+            myForm.username = ""
+            myForm.password = ""
             return render_template('index.html', form=myForm, message=message)
 
     return render_template('index.html', form=myForm)
