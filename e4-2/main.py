@@ -19,8 +19,8 @@ def login():
             return redirect("https://www.google.com.hk/")
         else:
             message = "login failed"
-            myForm.username = ""
-            myForm.password = ""
+            myForm.username.data = ""
+            myForm.password.data = ""
             return render_template('index.html', form=myForm, message=message)
 
     return render_template('index.html', form=myForm)
