@@ -12,10 +12,10 @@ def login():
         password = request.form['password']
 
         if username=='daihao' and password=='123456':
-            return redirect("http://google.com")
+            return redirect("https://www.google.com.hk/")
         else:
             message = "login failed"
-            return render_template('index.html')
+            return render_template('index.html', message=message)
 
     return render_template('index.html')
 
