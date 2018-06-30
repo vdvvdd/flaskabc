@@ -11,9 +11,9 @@
     <h1>User Management</h1>
     {% if message %} {{message}} {% endif %}
     <form method="post">
-        {{form.username}}
+        Username: {{form.username}}
         <br>
-        {{form.password}}
+        Passord: {{form.password}}
         <br>
         <input type="submit" name="submit" value="submit" />
         <input type="reset" name="reset" value="reset" />
