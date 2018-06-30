@@ -8,7 +8,7 @@ app = Flask(__name__)
 from wtforms import Form, TextField, PasswordField, validators
 
 class LoginForm(Form):
-    uersname = TextField("username", [validators.Required()])
+    username = TextField("username", [validators.Required()])
     password = PasswordField("password", [validators.Required()])
 
 @app.route("/user", methods=['GET', 'POST'])
