@@ -4,7 +4,9 @@
     <meta Charest='UTF-8'>
     <title>Cal</title>
 
-    <script type="text/javascript" src={{url_for('static', filename='add.js')}}></script>
+    <script type="text/javascript" src="checkValue.js">
+        
+    </script>
 </head>
 <body>
     <div align="center" style="margin-top: 40px;">
@@ -19,12 +21,24 @@
         </form>
     </div>
 
-    <form>
+    <form name="form2">
         <input type="text" name="text" placeholder="Text">
         <input type="password" name="password" placeholder="Password">
         <input trype="textarea" >
         <textarea name="textarea" placeholder="Textarea">T</textarea>
         <input type="file" name="file">
+
+        <input type="radio" name="option" value="a">a
+        <input type="radio" name="option" value="b">b
+        <input type="radio" name="option" value="c">c
+        <input type="checkbox" name="checkbox" value="x">x
+        <input type="checkbox" name="checkbox" value="y">y
+        <input type="checkbox" name="checkbox" value="z">z
+
+
+        <input type="submit" name="submit" value="Submit">
+        <input type="reset" name="reset" value="Reset">
+        <input type="button" name="button" value="Button" onclick="getValue()">
     </form>
 </body>
 </html>
