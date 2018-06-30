@@ -5,8 +5,15 @@ from flask import redirect
 
 app = Flask(__name__)
 
+from wtforms import Form, TextField, PasswordField, validators
+
+class LoginForm(Form):
+    uersname = TextField("username", [validators.Required()])
+    password = PasswordField("password", [validators.Required()])
+
 @app.route("/user", methods=['GET', 'POST'])
 def login():
+    myForm = LoginForm(request.form)
     if request.method=='POST':
         username = request.form['username']
         password = request.form['password']
@@ -17,7 +24,7 @@ def login():
             message = "login failed"
             return render_template('index.html', message=message)
 
-    return render_template('index.html')
+    return render_template('index.html', form=myForm)
 
 if __name__ == '__main__':
     app.run(port=8080, host='0.0.0.0')
