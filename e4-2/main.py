@@ -22,7 +22,7 @@ def login():
             return redirect("https://www.google.com.hk/")
         else:
             message = "login failed"
-            return render_template('index.html', message=message)
+            return render_template('index.html', form=myForm, message=message)
 
     return render_template('index.html', form=myForm)
 
