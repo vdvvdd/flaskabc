@@ -2,7 +2,7 @@ import pymysql
 
 # connect to db
 # docker: 172.17.0.1
-conn = pymysql.connect("172.17.0.1", "daihao", "dh123456", "flask")
+conn = pymysql.connect("172.17.0.1", "daihao", "123456", "flask")
 
 # cursor
 cursor = conn.cursor()
