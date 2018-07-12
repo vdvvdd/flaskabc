@@ -9,6 +9,13 @@ cursor = conn.cursor()
 
 # sql
 sql = "select * from test"
+sql_ins = "insert into test (id, name) values (3, 'sublime')"
+
+try:
+    cursor.execute(sql_ins)
+    conn.commit()
+except:
+    conn.rollback()
 
 # execute
 try:
