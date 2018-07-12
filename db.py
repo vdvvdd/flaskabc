@@ -9,7 +9,7 @@ cursor = conn.cursor()
 
 
 def add_user(username, password):
-    sql = "insert into users (username, password) values ('%s', '%s')" %(username, password)
+    sql = "insert into users (name, password) values ('%s', '%s')" %(username, password)
 
     try:
         cursor.execute(sql)
