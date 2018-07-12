@@ -1,7 +1,7 @@
 import pymysql
 
 
-name = raw_input()
+name = input()
 # connect to db
 # docker: 172.17.0.1
 conn = pymysql.connect("172.17.0.1", "daihao", "123456", "flask")
