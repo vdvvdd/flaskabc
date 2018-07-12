@@ -8,7 +8,7 @@ conn = pymysql.connect("172.17.0.1", "daihao", "123456", "flask")
 cursor = conn.cursor()
 
 
-def add_user(username, passowrd):
+def add_user(username, password):
     sql = "insert into users (username, password) values ('%s', '%s')" %(username, password)
 
     try:
