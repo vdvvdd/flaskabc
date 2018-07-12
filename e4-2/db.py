@@ -23,6 +23,25 @@ def add_user(username, password):
 
     conn.close()
 
+def is_exist(username, password):
+    conn = pymysql.connect("172.17.0.1", "daihao", "123456", "flask")
+    cursor = conn.cursor()
+
+    sql = "select * from users where name='%s' and password='%s'" %(username, password)
+
+    try:
+        cursor.execute(sql)
+        results = cursor.fetchall()
+
+        if len(results) == 0:
+            return False
+        else:
+            return True
+    except:
+        print("Error: unable to fetch data")
+
+
+
 # # sql
 # sql = "select * from test"
 # sql_ins = "insert into test (name) values ('%s')" %(name)
