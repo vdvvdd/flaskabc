@@ -1,15 +1,16 @@
 import pymysql
 
+
+name = raw_input()
 # connect to db
 # docker: 172.17.0.1
 conn = pymysql.connect("172.17.0.1", "daihao", "123456", "flask")
 
 # cursor
 cursor = conn.cursor()
-
 # sql
 sql = "select * from test"
-sql_ins = "insert into test (id, name) values (3, 'sublime')"
+sql_ins = "insert into test (name) values ('%s')" %(name)
 
 try:
     cursor.execute(sql_ins)
