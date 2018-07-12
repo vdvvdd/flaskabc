@@ -3,8 +3,8 @@
 cm=$1
 
 if test -z ${CM};then
-    cm=u
+    cm="u"
 fi
 git add *
-git commit -m ${cm} 
+git commit -m '${cm}' 
 git push
