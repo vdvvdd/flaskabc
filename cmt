@@ -2,9 +2,9 @@
 
 cm=$1
 
-if test -z ${CM};then
+if test -z ${cm};then
     cm="u"
 fi
 git add *
-git commit -m '${cm}' 
+git commit -m ${cm} 
 git push

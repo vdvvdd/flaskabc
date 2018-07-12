@@ -2,6 +2,7 @@ from flask import Flask
 from flask import request 
 from flask import render_template 
 from flask import redirect
+from db import *
 
 app = Flask(__name__)
 
@@ -24,6 +25,16 @@ def login():
             return render_template('index.html', form=myForm, message=message)
 
     return render_template('index.html', form=myForm)
+
+@app.route("/register", methods=['GET', 'POST'])
+def register():
+    myForm = LoginForm(request.form)
+    if request.method == 'POST':
+        if myForm.validate():
+            add_user(myForm.username.data, myForm.password.data)
+            return "Register successfully"
+    return render_template('index.html', form=myForm)
+
 
 if __name__ == '__main__':
     app.run(port=8080, host='0.0.0.0')
