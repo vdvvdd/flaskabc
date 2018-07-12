@@ -16,12 +16,13 @@ class LoginForm(Form):
 def login():
     myForm = LoginForm(request.form)
     if request.method=='POST':
-        if myForm.validate() and myForm.username.data=='daihao' and myForm.password.data=='123456':
-            return redirect("https://www.google.com.hk/")
+        if myForm.validate() and is_exist(myForm.username.data, myForm.password.data):
+        #if myForm.validate() and myForm.username.data=='daihao' and myForm.password.data=='123456':
+            return redirect("https://cn.bing.com/")
         else:
             message = "login failed"
-            myForm.username.data = ""
-            myForm.password.data = ""
+            # myForm.username.data = ""
+            # myForm.password.data = ""
             return render_template('index.html', form=myForm, message=message)
 
     return render_template('index.html', form=myForm)
