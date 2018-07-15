@@ -15,11 +15,12 @@
     <hr>
     {% with messages = get_flashed_message() %}
     {% if messages %}
-    <ul>
-      {% for message in messages %}
-      <li>{{ message }}</li>
-      {% endfor %}
-    </ul>
+      <ul>
+        {% for message in messages %}
+        <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
     {% endwith %}
     {% block content %}{% endblock %}
   </body>
