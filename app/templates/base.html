@@ -13,6 +13,14 @@
       <a href="/login">Login</a>
     </div>
     <hr>
+    {% with messages = get_flashed_message() %}
+    {% if messages %}
+    <ul>
+      {% for message in messages %}
+      <li>{{ message }}</li>
+      {% endfor %}
+    </ul>
+    {% endwith %}
     {% block content %}{% endblock %}
   </body>
 </html>
