@@ -1,15 +1,19 @@
 {% extends "base.html" %}
-{% block content %}
 
-<h1>Sign In</h1>
-<form action="" method="post" name="login">
-    {{ form.hidden_tag() }}
-    <p>
-        Please enter your OpenID:<br>
-        {{ form.openid(size=80) }}<br>
-    </p>
-    <p>{{ form.remember_me }} Remember Me</p>
-    <p><input type="submit" name="submit" value="Sign In"></p>
-</form>
+{% block content %}
+    <h1>Sign In</h1>
+    <form action="" method="post" name="login" novalidate>
+        {{ form.hidden_tag() }}
+        <p>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+        </p>
+        <p>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+        </p>
+        <p>{{ form.remember_me() }} {{ form.remember_me.label}}</p>
+        <p>{{ from.submit() }}</p>
+    </form>
 
 {% endblock %}
