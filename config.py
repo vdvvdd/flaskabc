@@ -6,5 +6,5 @@ class Config(object):
     SECRET_KEY = os.environ.get('SECRET_KEY') or 'you-will-never-guess'
 
     #database
-    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql://daihao:123456@172.17.0.1:3306/falsk'
+    SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL') or 'mysql://daihao:123456@172.17.0.1:3306/flask'
     SQLALCHEMY_TRACK_MODIFICATIONS = False
